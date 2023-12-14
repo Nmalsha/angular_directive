@@ -1,0 +1,8 @@
+<h1 [ngClass]="{ 'red-text': isAdmin }">Bonjour !</h1>
+
+<ng-container *ngFor="let btn of buttons">
+  <button *ngIf="isAdmin || btn !== 'Edit'">
+    {{ btn }}
+  </button>
+</ng-container>
+<button (click)="toggleAdminStatus()">{{ getAdminButtonText() }}</button>
